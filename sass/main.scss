@@ -1,0 +1,322 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "base/animation";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+@import "components/button";
+@import "layout/header";
+@import "pages/home";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+body {
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: underline;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,300&display=swap");
+
+.primary-heading {
+  color: $primary-text-color;
+}
+.wrapper {
+  background-color: $primary-bg-color;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.shape-triangle-one {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  position: absolute;
+  left: 30%;
+  top: -30px;
+  z-index: 0;
+  transform: rotate(65deg);
+  animation: rotate 5s infinite ease-in-out;
+}
+.shape-triangle-two {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  position: absolute;
+  left: 300px;
+  bottom: 40px;
+  transform: rotate(30deg);
+  display: none;
+  animation: rotate 5s infinite;
+}
+.shape-circle {
+  border: 6px solid $black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+  bottom: 200px;
+  z-index: 0;
+  animation: color 10s infinite;
+}
+.shape-rectangle {
+  border: 6px solid $black;
+  width: 90px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  bottom: -40px;
+  left: 30%;
+  transform: translate(-70%, -50%);
+  animation: rotate 20s infinite;
+}
+.shape-square {
+  border: 6px solid $black;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-30%);
+  left: 90px;
+  z-index: 0;
+  animation: rotate 15s infinite ease-in-out;
+}
+.shape-square-two {
+  border: 2px solid $black;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  position: absolute;
+  top: 66px;
+  right: 692px;
+  z-index: 1;
+}
+.dots {
+  position: absolute;
+  right: 80px;
+  top: 100px;
+  z-index: 1;
+}
+.dots-two {
+  position: absolute;
+  left: 80px;
+  bottom: 70px;
+  z-index: 1;
+  display: none;
+}
+.container {
+  background-color: transparent;
+  border: 1px solid $primary-text-color;
+  max-width: 1280px;
+  width: calc(100vw - 10px);
+  min-height: 550px;
+  height: 550px;
+  // height: 75vh;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home-outer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.home-lhs {
+  background-color: $primary-bg-color;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__intro {
+    &--title {
+      color: $primary-text-color;
+      font-weight: 100;
+      position: relative;
+
+      & .worktitle {
+        position: absolute;
+      }
+    }
+  }
+}
+
+.home-rhs {
+  background-color: $secondary-bg-color;
+  height: 100%;
+}
+
+.triangle {
+  position: relative;
+  width: 0;
+  border-bottom: solid 54px black;
+  border-right: solid 30px transparent;
+  border-left: solid 30px transparent;
+}
+.triangle .empty {
+  position: absolute;
+  top: 13px;
+  left: -21px;
+  width: 0;
+  border-bottom: solid 36px #121212;
+  border-right: solid 21px transparent;
+  border-left: solid 21px transparent;
+}
+
+footer {
+  position: absolute;
+  z-index: 3;
+  color: $secondary-text-color;
+  font-size: 12px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}

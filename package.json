@@ -1,0 +1,17 @@
+{
+  "name": "portfolio_v4",
+  "version": "1.0.0",
+  "description": "Portfolio version 4 June 2020",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Vishal Katral",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "watch": "^1.0.2"
+  }
+}
