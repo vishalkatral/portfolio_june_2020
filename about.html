@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <script src="" async defer></script>
+
+    <div class="wrapper">
+
+      <header>
+        <div class="logo">&nbsp;</div>
+        <div class="menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+        </div>
+      </header>
+
+      <span class="profile-title">Web & UI Designer</span>
+      <span class="shape-triangle-one">
+        <div class="triangle">
+            <div class="empty"></div>
+        </div>
+      </span>
+      <span class="shape-triangle-two">
+        <div class="triangle">
+            <div class="empty"></div>
+        </div>
+      </span>
+     
+      <span class="shape-square"></span>
+      <span class="shape-square-two"></span>
+      <span class="shape-circle"></span>
+      <span class="shape-rectangle"></span>
+      <span class="dots"><img src="/images/dots-pattern.png" /></span>
+      <span class="dots-two"><img src="/images/dots-pattern.png" /></span>
+      <div class="container">
+        <div class="home-outer">
+          <div class="home-lhs">
+              <div class="about-content">
+                <h1 class="primary-heading">who am i</h1>
+                <h1 class="primary-sub-heading">in few words</h1>
+                <p class="introduction">I’m Vishal, a web & ui designer currently working as a freelancer. I’ve been working in the IT Industry for more than 7 years in various organisations mostly Startup's. I specialize mainly in web design, mobile apps & branding.
+                  <br/><br/>
+                  I am available for a full-time position or freelance work.
+                  <br/><br/>
+                  If you want to reach out, please send a message to hello@vishalkatral.com <br/><br/> <br/>
+                  <a href="#" class="primarylink">Download Resume</a>
+                </p>
+              </div>       
+          </div>
+          <div class="home-rhs">
+            <div class="about-rhs">
+              <div class="techskills">
+                tech skills
+                <button id="hide">Hide</button>
+              </div>
+              <div class="skill-links">
+                 <a href="#" class="primarylink">Hobbies</a>
+                 <a href="#" class="primarylink" id="show">Technical Skills</a>
+              </div>
+              <div class="video-container">
+                <video
+                  src="images/aboutme.m4v"
+                  autoplay="true"
+                  loop
+                  type="video/mp4"
+                  class="about-video"
+                ></video>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <footer>
+          <h1>&copy; copyrights 2020. all rights reserved</h1>
+        </footer>
+      </div>
+    </div>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+     var scene = document.getElementById('scene');
+     var parallaxInstance = new Parallax(scene, {
+     relativeInput: true
+     });
+     </script>
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+
+  
+
+     <script>
+      // gsap.from(".wt-six", { opacity: 0, duration: 0.5, x: -50 });
+      // gsap.from(".menu", { opacity: 0, duration: 0.5, y: -50 });
+      gsap.from(".slider-box__title", { opacity: 0, duration: 0.5, x: -1050 });
+      gsap.from(".primary-heading", { opacity: 0, duration: 1, y: -50 });
+      gsap.from(".primary-sub-heading", { opacity: 0, duration: 1, y: 50 });
+      // gsap.from(".slider-box__image", { opacity: 0, duration: 0.5, x: -50 });
+      gsap.from(".slider-box__image", {
+        opacity: 0,
+        duration: 0.5,
+        x: 1500,
+      });
+      gsap.from(".btn-primary", { opacity: 0, duration: 0.5, y: 50 });
+      gsap.from(".copyrights", { opacity: 0, duration: 0.5, x: -50 });
+      gsap.from(".footer__rhs", { opacity: 0, duration: 0.5, y: 50 });
+      gsap.from(".shapes__circle", {
+        opacity: 0,
+        repeat: 2,
+        duration: 5,
+        ease: "power2.out",
+        y: 200,
+      });
+      gsap.from(".shapes__triangle", {
+        opacity: 0,
+        repeat: 2,
+        duration: 10,
+        ease: "power2.out",
+        x: 200,
+      });
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $(".techskills").hide();
+  });
+  $("#show").click(function(){
+    $(".techskills").show();
+  });
+});
+</script>
+    
+  </body>
+</html>
