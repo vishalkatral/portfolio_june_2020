@@ -9,7 +9,8 @@
 @import "layout/header";
 @import "pages/home";
 @import "pages/about";
-
+@import "pages/contact";
+@import "pages/project";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -143,15 +144,26 @@ table {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 body {
-  background-color: #fff;
+  background-color: $white;
   font-family: "Roboto", sans-serif;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 
 a:link,
 a:active,
 a:visited {
   text-decoration: none;
-  color: #000;
+  color: $black;
 }
 a:hover {
   text-decoration: underline;
@@ -167,6 +179,28 @@ a:hover {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 667px) {
+    // overflow: auto;
+    // padding-bottom: 200px;
+  }
+}
+
+.wrapper-about {
+  background-color: $primary-bg-color;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  @media screen and (max-width: 667px) {
+    overflow: auto;
+    height: auto;
+  }
+}
+.wrapper-project {
+  background-color: $primary-bg-color;
+  @media screen and (max-width: 768px) {
+    position: relative;
+  }
 }
 .shape-triangle-one {
   width: 70px;
@@ -201,6 +235,9 @@ a:hover {
   bottom: 200px;
   z-index: 0;
   animation: color 10s infinite;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .shape-rectangle {
   border: 6px solid $black;
@@ -212,6 +249,9 @@ a:hover {
   left: 30%;
   transform: translate(-70%, -50%);
   animation: rotate 20s infinite;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .shape-square {
   border: 6px solid $black;
@@ -234,12 +274,19 @@ a:hover {
   top: 66px;
   right: 692px;
   z-index: 1;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .dots {
   position: absolute;
   right: 80px;
   top: 100px;
   z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .dots-two {
   position: absolute;
@@ -250,7 +297,7 @@ a:hover {
 }
 .container {
   background-color: transparent;
-  border: 1px solid $primary-text-color;
+  // border: 1px solid $primary-text-color;
   max-width: 1280px;
   width: calc(100vw - 10px);
   min-height: 550px;
@@ -261,12 +308,55 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media screen and (max-width: 768px) {
+    width: calc(100vw - 50px);
+    height: auto;
+    // position: relative;
+  }
+  @media screen and (max-width: 667px) {
+    width: calc(100vw - 30px);
+    top: 45px;
+    left: 0;
+    transform: translate(-0, -0);
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 120px;
+  }
+}
+#controlfooter .home-lhs {
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
+}
+
+#controlfooter .container {
+  @media screen and (max-width: 320px) {
+    width: calc(100vw - 30px);
+    height: 80vh;
+    // top: 0;
+    position: relative;
+  }
+}
+
+.container-project {
+  max-width: 1280px;
+  width: calc(100vw - 10px);
+  margin: 0 auto;
+  // padding-top: 80px;
+
+  @media screen and (max-width: 667px) {
+    max-width: 100%;
+  }
 }
 .home-outer {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+
+  @media screen and (max-width: 667px) {
+    margin: 0 auto;
+  }
 }
 .home-lhs {
   background-color: $primary-bg-color;
@@ -278,6 +368,9 @@ a:hover {
   overflow: hidden;
 
   &__intro {
+    @media screen and (max-width: 320px) {
+      display: none;
+    }
     &--title {
       color: $primary-text-color;
       font-weight: 100;
@@ -291,14 +384,20 @@ a:hover {
 }
 
 .home-rhs {
-  background-color: $secondary-bg-color;
+  background-color: transparent;
   height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .flickity-button-icon {
+    filter: invert(27%);
+  }
 }
 
 .triangle {
   position: relative;
   width: 0;
-  border-bottom: solid 54px black;
+  border-bottom: solid 54px $primary-bg-color;
   border-right: solid 30px transparent;
   border-left: solid 30px transparent;
 }
@@ -307,14 +406,14 @@ a:hover {
   top: 13px;
   left: -21px;
   width: 0;
-  border-bottom: solid 36px #121212;
+  border-bottom: solid 36px $primary-bg-color;
   border-right: solid 21px transparent;
   border-left: solid 21px transparent;
 }
 
 header {
   position: absolute;
-  top: 30px;
+  top: 35px;
   max-width: 1280px;
   width: calc(100vw - 10px);
   margin: 0 auto;
@@ -323,6 +422,15 @@ header {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 768px) {
+    top: 15px;
+    width: calc(100vw - 50px);
+  }
+
+  @media screen and (max-width: 667px) {
+    width: calc(100vw - 25px);
+  }
 }
 .menu {
   justify-self: flex-end;
@@ -331,14 +439,19 @@ header {
   margin-left: 20px;
 }
 .menu a:link,
-.menu a:visited {
+.menu a:visited,
+.logo a:link,
+.logo a:visited {
   font-size: 14px;
   font-weight: 300;
   color: $primary-text-color;
 }
 .menu a:hover,
-.menu a:active {
+.menu a:active,
+.logo a:hover,
+.logo a:active {
   color: $tertiary-text-color;
+  text-decoration: none;
 }
 footer {
   position: absolute;
@@ -348,6 +461,49 @@ footer {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+  @media screen and (max-width: 768px) {
+    bottom: 15px;
+    right: 0;
+  }
+  @media screen and (max-width: 667px) {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+
+  & h1 {
+    text-align: center;
+    @media screen and (max-width: 768px) {
+      text-align: right;
+    }
+
+    @media screen and (max-width: 667px) {
+      opacity: 0.5;
+      display: inline;
+      text-align: center;
+    }
+  }
+}
+
+.footer-project {
+  position: relative;
+  text-align: center;
+
+  & h1 {
+    text-align: center;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      text-align: right;
+    }
+    @media screen and (max-width: 667px) {
+      text-align: center;
+    }
+  }
 }
 
 .primary-heading {
@@ -355,6 +511,10 @@ footer {
   font-size: $primary-heading-text;
   text-transform: $text-uppercase;
   font-weight: $primary-heading-font-weight;
+
+  @media screen and (max-width: 320px) {
+    font-size: $primary-sub-heading-text;
+  }
 }
 
 .primary-sub-heading {
@@ -369,7 +529,7 @@ footer {
   font-size: $primary-content-text;
   font-weight: $primary-content-font-weight;
   text-transform: $text-inherit;
-  line-height: 28px;
+  line-height: 24px;
   padding-top: 20px;
   letter-spacing: 1px;
   text-align: left;
@@ -383,5 +543,213 @@ footer {
 }
 .primarylink:hover,
 .primarylink:active {
-  color: $secondary-text-color;
+  color: $primary-text-color;
+  text-decoration: none;
+}
+
+.icon-close {
+  width: 14px;
+  height: 14px;
+}
+.follow-me {
+  position: absolute;
+  right: 25px;
+  bottom: 4%;
+  // border: 1px solid aqua;
+  @media screen and (max-width: 768px) {
+    // width: 93vw;
+    bottom: 15px;
+    left: 12%;
+  }
+  @media screen and (max-width: 667px) {
+    position: absolute;
+    bottom: 6.5vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__links {
+    list-style-type: none;
+    margin: 0;
+
+    & li {
+      // margin-bottom: 10px;
+      margin: 90px 0;
+      @media screen and (max-width: 768px) {
+        margin: 20px 20px 20px 0;
+        display: inline;
+      }
+
+      @media screen and (max-width: 320px) {
+        margin: 20px 10px 20px 0;
+      }
+
+      & a {
+        color: $secondary-text-color;
+        font-size: 12px;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        display: flex;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        @media screen and (max-width: 768px) {
+          transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          display: inline;
+          text-align: left;
+        }
+
+        &:hover {
+          text-decoration: none;
+          color: $tertiary-text-color;
+        }
+      }
+    }
+
+    &--behance {
+      background: transparent url(../images/icon_behance.svg) no-repeat;
+      background-size: 20px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      filter: invert(20%);
+      transition: all 0.8s;
+      cursor: pointer;
+
+      &:hover {
+        filter: invert(100%);
+      }
+    }
+
+    &--linkedin {
+      background: transparent url(../images/icon_linkedin.svg) no-repeat;
+      background-size: 20px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      filter: invert(20%);
+      transition: all 0.8s;
+
+      &:hover {
+        filter: invert(100%);
+      }
+    }
+
+    &--github {
+      background: transparent url(../images/icon_github.svg) no-repeat;
+      background-size: 20px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      filter: invert(10%);
+      transition: all 0.8s;
+
+      &:hover {
+        filter: invert(100%);
+      }
+    }
+  }
+}
+
+.block {
+  display: block;
+}
+.mtb-80 {
+  margin: 80px 0;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+.ml-0 {
+  left: 0px;
+}
+.ml-8rem {
+  left: -0.8rem;
+  @media screen and (max-width: 768px) {
+    left: 0;
+  }
+}
+.pb-100px {
+  padding-bottom: 100px;
+}
+.pt-100px {
+  padding-top: 100px;
+}
+.ptb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 667px) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}
+
+.dragnote {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  left: 65%;
+  transform: translateX(-65%);
+  z-index: 1;
+  top: 40px;
+  opacity: 0.5;
+
+  @media screen and (max-width: 667px) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+  }
+
+  & span {
+    color: $white;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+  }
+
+  & img {
+    filter: invert(100%);
+  }
+}
+
+.icon-m {
+  width: 40px;
+}
+.ss-laptop-two {
+  width: 70%;
+}
+
+.bg-primary {
+  background-color: $primary-bg-color;
+}
+.bg-secondary {
+  background-color: $secondary-bg-color;
+}
+.bg-tertiary {
+  background-color: $tertiary-bg-color;
+}
+
+.bg-black {
+  background-color: $black;
+}
+.bg-lightgray {
+  background-color: $lightgray;
+}
+.bg-grey {
+  background-color: $grey;
+}
+.bg-white {
+  background-color: $white;
 }

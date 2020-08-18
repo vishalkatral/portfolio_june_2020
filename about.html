@@ -3,23 +3,27 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html lang="en">
   <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
+    <title>About | Vishal K. - Freelance Web/UI Designer</title>
+    <meta
+      name="description"
+      content="Vishal K. is a web and user interface designer based in INDIA, who also does some front-end development for web and mobile apps."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, web design, mobile app design, wireframe, prototype, branding, ui, user interface design, bootstrap, html5, css3, scss, wordpress, wix, shopify, upwork, reactjs"
+    />
+    <meta name="author" content="Vishal K." />
+    <meta name="copyright" content="© Copyright 2020 - Vishal K." />
+    <meta name="location" content="Remote, INDIA" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-    />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-  />
+    <link rel="stylesheet" href="./sass/vendors/flickity.min.css" />
+    <link rel="stylesheet" href="./sass/vendors/animate.min.css" />
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -29,139 +33,548 @@
       </p>
     <![endif]-->
 
-    <script src="" async defer></script>
+    <!-- <script src="" async defer></script> -->
 
-    <div class="wrapper">
-
+    <div class="wrapper-about">
       <header>
-        <div class="logo">&nbsp;</div>
-        <div class="menu">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
+        <div class="logo"><a href="index.html">Vishal K.</a></div>
+        <div>
+          <nav>
+            <ul class="menu">
+              <li><a href="about.html" class="menu__item">About</a></li>
+              <!-- <li><a href="#" class="menu__item">Projects</a></li> -->
+              <li><a href="contact.html" class="menu__item">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <span class="profile-title">Web & UI Designer</span>
-      <span class="shape-triangle-one">
+      <div class="follow-me">
+        <ul class="follow-me__links">
+          <li>
+            <a href="https://www.behance.net/katralvish84ad" target="_blank"
+              >behance</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/vishal-k-020bb5170/"
+              target="_blank"
+              >linkedin</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/vishalkatral" target="_blank">github</a>
+          </li>
+        </ul>
+      </div>
+
+      <span class="profile-title">Web/UI Designer</span>
+      <div class="shape-triangle-one">
         <div class="triangle">
-            <div class="empty"></div>
+          <div class="empty"></div>
         </div>
-      </span>
-      <span class="shape-triangle-two">
+      </div>
+      <div class="shape-triangle-two">
         <div class="triangle">
-            <div class="empty"></div>
+          <div class="empty"></div>
         </div>
-      </span>
-     
+      </div>
+
       <span class="shape-square"></span>
       <span class="shape-square-two"></span>
       <span class="shape-circle"></span>
       <span class="shape-rectangle"></span>
-      <span class="dots"><img src="/images/dots-pattern.png" /></span>
-      <span class="dots-two"><img src="/images/dots-pattern.png" /></span>
+      <span class="dots"
+        ><img src="/images/dots-pattern.png" alt="dots pattern"
+      /></span>
+      <span class="dots-two"
+        ><img src="/images/dots-pattern.png" alt="dots pattern"
+      /></span>
       <div class="container">
-        <div class="home-outer">
-          <div class="home-lhs">
-              <div class="about-content">
-                <h1 class="primary-heading">who am i</h1>
-                <h1 class="primary-sub-heading">in few words</h1>
-                <p class="introduction">I’m Vishal, a web & ui designer currently working as a freelancer. I’ve been working in the IT Industry for more than 7 years in various organisations mostly Startup's. I specialize mainly in web design, mobile apps & branding.
-                  <br/><br/>
-                  I am available for a full-time position or freelance work.
-                  <br/><br/>
-                  If you want to reach out, please send a message to hello@vishalkatral.com <br/><br/> <br/>
-                  <a href="#" class="primarylink">Download Resume</a>
-                </p>
-              </div>       
-          </div>
-          <div class="home-rhs">
-            <div class="about-rhs">
-              <div class="techskills">
-                tech skills
-                <button id="hide">Hide</button>
-              </div>
-              <div class="skill-links">
-                 <a href="#" class="primarylink">Hobbies</a>
-                 <a href="#" class="primarylink" id="show">Technical Skills</a>
-              </div>
-              <div class="video-container">
-                <video
-                  src="images/aboutme.m4v"
-                  autoplay="true"
-                  loop
-                  type="video/mp4"
-                  class="about-video"
-                ></video>
-              </div>
+        <div class="about-outer">
+          <div class="about-lhs">
+            <div class="about-content">
+              <h1 class="primary-heading">who am i</h1>
+              <h1 class="primary-sub-heading">in few words</h1>
+              <p class="introduction">
+                I’m Vishal, UI designer based in INDIA currently working as a
+                freelancer. I’ve been working in the IT Industry for more than 7
+                years in various organisations, mostly Startup's. I specialize
+                mainly in web design, mobile apps & branding. <br /><br />
+                I am available for a full-time position or freelance work.
+                <br /><br />
+                If you want to reach out, please send a message to
+                <a href="mailto:hello@vishalkatral.com" class="primarylink"
+                  >hello@vishalkatral.com</a
+                >
+                <br /><br /><br />
+                <a href="#" class="primarylink email">Download Resume</a>
+              </p>
             </div>
           </div>
+
+          <div class="about-rhs">
+            <div class="techskills">
+              <div class="patch"></div>
+              <div class="patchTwo"></div>
+              <div class="techskills__box">
+                <div class="techskills__box--top">
+                  <div class="skills-title">
+                    <h4 class="skills-heading">
+                      Adobe Photoshop <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      WIX <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      WORDPRESS <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      ADOBE ILLUSTRATOR <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      Bootstrap <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      Shopify <br />
+                      <span class="skills-sub-heading">Intermediate Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      Figma <br />
+                      <span class="skills-sub-heading">Intermediate Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      HTML5 <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      Adobe XD<br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                    <h4 class="skills-heading">
+                      Canva <br />
+                      <span class="skills-sub-heading">Expert Level</span>
+                    </h4>
+                  </div>
+                </div>
+                <div class="techskills__box--bottom">
+                  <div class="skills-torch"></div>
+                  <div class="skills-rotate">
+                    <div class="skills-rotate__icons">
+                      <img
+                        class="skills-rotate__icons--1"
+                        src="images/icon_canva.webp"
+                        alt="canva expert"
+                      />
+                      <img
+                        class="skills-rotate__icons--2"
+                        src="images/icon_xd.svg"
+                        alt="adobe xd expert"
+                      />
+                      <img
+                        class="skills-rotate__icons--3"
+                        src="images/icon_html5.svg"
+                        alt="html5 css3 scss expert"
+                      />
+                      <img
+                        class="skills-rotate__icons--4"
+                        src="images/icon_figma.svg"
+                        alt="figma Intermediate"
+                      />
+                      <img
+                        class="skills-rotate__icons--5"
+                        src="images/icon_shopify.webp"
+                        alt="shopify beginner"
+                      />
+                      <img
+                        class="skills-rotate__icons--6"
+                        src="images/icon_bootstrap.png"
+                        alt="bootstrap intermediate"
+                      />
+                      <img
+                        class="skills-rotate__icons--7"
+                        src="images/icon_illustrator.svg"
+                        alt="adobe illustrator intermediate"
+                      />
+                      <img
+                        class="skills-rotate__icons--8"
+                        src="images/icon_wordpress.svg"
+                        alt="wordpress intermediate"
+                      />
+                      <img
+                        class="skills-rotate__icons--9"
+                        src="images/icon_wix.png"
+                        alt="wix expert"
+                      />
+                      <img
+                        class="skills-rotate__icons--10"
+                        src="images/icon_photoshop.svg"
+                        alt="photoshop expert"
+                      />
+                    </div>
+                  </div>
+                  <div class="skills-fixed">
+                    <div class="skills-fixed__dottedborder"></div>
+                    <div class="skills-fixed__circlelg"></div>
+                    <div class="skills-fixed__circlesm"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="hobbies">
+              <div class="hobbies__grid">
+                <div class="video-container-grid">
+                  <div class="videobtns orange">
+                    <button
+                      onclick="playVidGridOne()"
+                      type="button"
+                      class="btn-play"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_play.svg"
+                        alt="play video button"
+                      />
+                    </button>
+                    <button
+                      onclick="pauseVidGridOne()"
+                      type="button"
+                      class="btn-pause"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_pause.svg"
+                        alt="pause video button"
+                      />
+                    </button>
+                  </div>
+                  <video
+                    id="myGridVideoOne"
+                    src="images/bir.MP4"
+                    preload="false"
+                    loop
+                    type="video/mp4"
+                    class="about-video-grid"
+                  ></video>
+                </div>
+                <div class="video-container-grid">
+                  <div class="videobtns blue">
+                    <button
+                      onclick="playVidGridTwo()"
+                      type="button"
+                      class="btn-play"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_play.svg"
+                        alt="play video button"
+                      />
+                    </button>
+                    <button
+                      onclick="pauseVidGridTwo()"
+                      type="button"
+                      class="btn-pause"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_pause.svg"
+                        alt="pause video button"
+                      />
+                    </button>
+                  </div>
+                  <video
+                    id="myGridVideoTwo"
+                    src="images/leh.mov"
+                    preload="false"
+                    loop
+                    type="video/mp4"
+                    class="about-video-grid"
+                  ></video>
+                </div>
+                <div class="video-container-grid">
+                  <div class="videobtns green">
+                    <button
+                      onclick="playVidGridThree()"
+                      type="button"
+                      class="btn-play"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_play.svg"
+                        alt="play video button"
+                      />
+                    </button>
+                    <button
+                      onclick="pauseVidGridThree()"
+                      type="button"
+                      class="btn-pause"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_pause.svg"
+                        alt="pause video button"
+                      />
+                    </button>
+                  </div>
+                  <video
+                    id="myGridVideoThree"
+                    src="images/aboutme.m4v"
+                    preload="auto"
+                    loop
+                    type="video/mp4"
+                    class="about-video-grid"
+                  ></video>
+                </div>
+                <div class="video-container-grid">
+                  <div class="videobtns aqua">
+                    <button
+                      onclick="playVidGridFour()"
+                      type="button"
+                      class="btn-play"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_play.svg"
+                        alt="play video button"
+                      />
+                    </button>
+                    <button
+                      onclick="pauseVidGridFour()"
+                      type="button"
+                      class="btn-pause"
+                    >
+                      <img
+                        class="icon-m"
+                        src="images/icon_pause.svg"
+                        alt="pause video button"
+                      />
+                    </button>
+                  </div>
+                  <video
+                    id="myGridVideoFour"
+                    src="images/bali.mp4"
+                    preload="auto"
+                    loop
+                    type="video/mp4"
+                    class="about-video-grid"
+                  ></video>
+                </div>
+              </div>
+
+              <img class="icon-close" src="images/close.svg" alt="" id="hideHobbies" onclick="playVid()"/>
+                <div class="">
+                <div class="">
+                <img src="images/photo.png" alt="" class="photo"/>
+                <div class="stickbox">
+                  <img src="images/lollipop_stick.png" alt="" class="stick"/>
+                  <span class="sticktop"></span>
+                </div>
+              </div>
+            </div>
+            </div> -->
+            <div class="skill-links">
+              <!-- <div><a href="#" class="primarylink showHobbies" id="showHobbies" onclick="pauseVid()">Gallery</a><button id="hideHobbies" onclick="playVid()"><img src="images/close.svg" class="icon-close"/></button></div> -->
+              <div>
+                <a
+                  href="#"
+                  class="primarylink showTechnicalSkills"
+                  id="showTechnicalSkills"
+                  onclick="pauseVid()"
+                  >Technical Skills</a
+                ><button id="hideTechnicalSkills" onclick="playVid()">
+                  <img class="icon-close" src="images/close.svg" alt="" />
+                </button>
+              </div>
+            </div>
+            <div class="video-container">
+              <video
+                id="myVideo"
+                src="images/aboutme.m4v"
+                autoplay="true"
+                loop
+                class="about-video"
+              ></video>
+            </div>
           </div>
         </div>
-
-        <footer>
-          <h1>&copy; copyrights 2020. all rights reserved</h1>
-        </footer>
       </div>
+
+      <footer>
+        <h1>&copy; copyrights 2020. all rights reserved</h1>
+      </footer>
     </div>
 
-
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="./sass/vendors/parallax.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./sass/vendors/flickity.pkgd.min.js"></script>
+
+    <script src="./sass/vendors/gsap.min.js"></script>
+
     <script>
-     var scene = document.getElementById('scene');
-     var parallaxInstance = new Parallax(scene, {
-     relativeInput: true
-     });
-     </script>
-     
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-
-  
-
-     <script>
       // gsap.from(".wt-six", { opacity: 0, duration: 0.5, x: -50 });
-      // gsap.from(".menu", { opacity: 0, duration: 0.5, y: -50 });
-      gsap.from(".slider-box__title", { opacity: 0, duration: 0.5, x: -1050 });
-      gsap.from(".primary-heading", { opacity: 0, duration: 1, y: -50 });
-      gsap.from(".primary-sub-heading", { opacity: 0, duration: 1, y: 50 });
-      // gsap.from(".slider-box__image", { opacity: 0, duration: 0.5, x: -50 });
-      gsap.from(".slider-box__image", {
+      gsap.from(".menu", { opacity: 0, duration: 0.5, y: -50 });
+      gsap.from(".logo", { opacity: 0, duration: 0.5, y: -50 });
+      gsap.from(".profile-title", { opacity: 0, duration: 0.5, x: -50 });
+      gsap.from(".follow-me", { opacity: 0, duration: 0.5, x: 50 });
+      gsap.from("footer", { opacity: 0, duration: 0.5, y: 50 });
+      gsap.from(".about-lhs", {
         opacity: 0,
-        duration: 0.5,
-        x: 1500,
-      });
-      gsap.from(".btn-primary", { opacity: 0, duration: 0.5, y: 50 });
-      gsap.from(".copyrights", { opacity: 0, duration: 0.5, x: -50 });
-      gsap.from(".footer__rhs", { opacity: 0, duration: 0.5, y: 50 });
-      gsap.from(".shapes__circle", {
-        opacity: 0,
-        repeat: 2,
-        duration: 5,
+        duration: 0.8,
+        delay: 0.7,
+        x: -50,
         ease: "power2.out",
-        y: 200,
       });
-      gsap.from(".shapes__triangle", {
+      gsap.from(".about-rhs", {
         opacity: 0,
-        repeat: 2,
-        duration: 10,
+        duration: 0.8,
+        delay: 0.9,
+        x: -50,
         ease: "power2.out",
-        x: 200,
+      });
+      gsap.from(".primary-heading", {
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+        y: 50,
+        ease: "power2.out",
+      });
+      gsap.from(".primary-sub-heading", {
+        opacity: 0,
+        duration: 1,
+        delay: 1.2,
+        y: 50,
+        ease: "power2.out",
+      });
+      gsap.from(".introduction", {
+        opacity: 0,
+        duration: 1,
+        delay: 1.4,
+        y: 50,
+        ease: "power2.out",
+      });
+      gsap.from(".primarylink", {
+        opacity: 0,
+        duration: 1,
+        delay: 1.6,
+        y: 50,
+        ease: "power2.out",
       });
     </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#hide").click(function(){
-    $(".techskills").hide();
-  });
-  $("#show").click(function(){
-    $(".techskills").show();
-  });
-});
-</script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#hideTechnicalSkills").click(function () {
+          $(".techskills").hide();
+          $("#hideTechnicalSkills").hide();
+          $("#showTechnicalSkills").show();
+        });
+        $("#hideHobbies").click(function () {
+          $(".hobbies").hide();
+          $("#hideHobbies").hide();
+          $("#showHobbies").show();
+        });
+        $("#showTechnicalSkills").click(function () {
+          $(".techskills").show();
+          $("#showTechnicalSkills").hide();
+          $("#hideTechnicalSkills").show();
+          $(".hobbies").hide();
+          $("#hideHobbies").hide();
+          $("#showHobbies").show();
+        });
+        $("#showHobbies").click(function () {
+          $(".hobbies").show();
+          $("#showHobbies").hide();
+          $("#hideHobbies").show();
+          $(".techskills").hide();
+          $("#hideTechnicalSkills").hide();
+          $("#showTechnicalSkills").show();
+        });
+      });
+    </script>
+
+    <script>
+      var vid = document.getElementById("myVideo");
+      var vidGridOne = document.getElementById("myGridVideoOne");
+      var vidGridTwo = document.getElementById("myGridVideoTwo");
+      var vidGridThree = document.getElementById("myGridVideoThree");
+      var vidGridFour = document.getElementById("myGridVideoFour");
+
+      function playVid() {
+        vid.play();
+      }
+      function playVidGridOne() {
+        vidGridOne.play();
+        $(".btn-pause").show();
+        $(".btn-play").hide();
+      }
+      function playVidGridTwo() {
+        vidGridTwo.play();
+      }
+      function playVidGridThree() {
+        vidGridThree.play();
+      }
+      function playVidGridFour() {
+        vidGridFour.play();
+      }
+
+      function pauseVid() {
+        vid.pause();
+      }
+      function pauseVidGridOne() {
+        vidGridOne.pause();
+        $(".btn-play").show();
+        $(".btn-pause").hide();
+      }
+      function pauseVidGridTwo() {
+        vidGridTwo.pause();
+      }
+      function pauseVidGridThree() {
+        vidGridThree.pause();
+      }
+      function pauseVidGridFour() {
+        vidGridFour.pause();
+      }
+
+      function enableMute() {
+        vid.muted = true;
+      }
+      function enableMute() {
+        vidGridOne.muted = true;
+      }
+      function enableMute() {
+        vidGridTwo.muted = true;
+      }
+      function enableMute() {
+        vidGridThree.muted = true;
+      }
+      function enableMute() {
+        vidGridFour.muted = true;
+      }
+
+      function disableMute() {
+        vid.muted = false;
+      }
+      function disableMute() {
+        vidGridOne.muted = false;
+      }
+      function disableMute() {
+        vidGridTwo.muted = false;
+      }
+      function disableMute() {
+        vidGridThree.muted = false;
+      }
+      function disableMute() {
+        vidGridFour.muted = false;
+      }
+    </script>
   </body>
 </html>

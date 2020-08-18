@@ -15,25 +15,137 @@
   position: relative;
   overflow: hidden;
 }
+
+div#homepage {
+  // background: tomato;
+  @media screen and (max-width: 667px) {
+    height: 100%;
+  }
+  @media screen and (max-width: 320px) {
+    height: 80vh;
+    position: relative;
+    top: 10px;
+  }
+}
+
+#homepage .carousel-cell .slider-image-box {
+  @media screen and (max-width: 667px) {
+    // border: 2px solid red;
+    height: 70vh;
+  }
+}
+
+.project-edspera {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: transparent;
+  flex-direction: column;
+  @media screen and (max-width: 667px) {
+    width: 100%;
+    height: auto;
+    bottom: 85px;
+  }
+
+  @media screen and (max-width: 320px) {
+    // position: absolute;
+    top: 252px;
+  }
+
+  &__name {
+    font-size: $primary-heading-text;
+    font-weight: $primary-sub-heading-font-weight;
+    color: $primary-text-color;
+    @media screen and (max-width: 667px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__category {
+    color: $primary-text-color;
+    font-size: $secondary-sub-heading-text;
+    font-weight: $tertiary-font-weight;
+    line-height: 23px;
+    letter-spacing: 1.5px;
+    @media screen and (max-width: 667px) {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin: 5px 0;
+      // letter-spacing: 2.5px;
+    }
+  }
+
+  &__more:link,
+  &__more:visited {
+    color: $tertiary-text-color;
+    font-size: 12px;
+    font-weight: $secondary-font-weight;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    // border-left: 1px solid $tertiary-text-color;
+    // border-right: 1px solid $tertiary-text-color;
+    padding: 5px 12px;
+    transition: all 0.5s;
+    @media screen and (max-width: 667px) {
+      text-transform: lowercase;
+      margin-top: 0;
+    }
+  }
+  &__more:hover {
+    text-decoration: none;
+    background-color: $tertiary-bg-color;
+    color: $black;
+    font-size: 12px;
+    font-weight: $primary-font-weight;
+  }
+}
 .slider-image-box {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
   height: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
+  background-color: $secondary-bg-color;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    z-index: -1;
+  }
+  @media screen and (max-width: 667px) {
+    background-color: transparent;
+  }
 }
 .slider-image {
   height: 283px !important;
+  @media screen and (max-width: 667px) {
+    width: 70vw !important;
+    height: auto !important;
+  }
 }
 
 .carousel-pagination {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 51.55%;
+  z-index: 1;
+  @media screen and (max-width: 768px) {
+    left: 15px;
+    // transform: translateX(-39px);
+  }
+  @media screen and (max-width: 667px) {
+    display: none;
+  }
 }
 .flickity-button {
   background: transparent !important;
@@ -52,6 +164,13 @@
   bottom: 20px !important;
   //   transform: rotate(90deg);
   //   right: -65px !important;
+
+  @media screen and (max-width: 768px) {
+    right: 10px;
+  }
+  @media screen and (max-width: 667px) {
+    right: 0px;
+  }
 }
 
 .flickity-page-dots .dot {
@@ -63,9 +182,19 @@
   border-radius: 0px !important;
   top: 95% !important;
   transform: translateY(-95%);
+  left: 50.1% !important;
+
+  @media screen and (max-width: 768px) {
+    left: 2% !important;
+    transform: translateX(-2% !important);
+  }
 }
 .flickity-prev-next-button.next {
-  left: 55px !important;
+  left: 54.2% !important;
+  @media screen and (max-width: 768px) {
+    left: 15% !important;
+    transform: translateX(-5% !important);
+  }
 }
 
 .profile-title {
@@ -77,8 +206,21 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   position: absolute;
-  top: 50%;
+  bottom: 25.5%;
   left: -40px;
+
+  @media screen and (max-width: 768px) {
+    top: 35px;
+    left: 25px;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  @media screen and (max-width: 667px) {
+    top: 45px;
+    left: 12px;
+    letter-spacing: 1px;
+    display: none;
+  }
 }
 .fullname {
   font-size: 72px;
@@ -126,10 +268,4 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   display: none;
-}
-
-@media screen and (min-width: 768px) {
-  .carousel-cell img {
-    height: 400px;
-  }
 }

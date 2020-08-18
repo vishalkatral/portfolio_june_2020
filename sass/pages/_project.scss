@@ -1,0 +1,275 @@
+.project-outer {
+  width: 100%;
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media screen and (max-width: 768px) {
+      grid-template-columns: auto;
+      padding: 15px;
+    }
+
+    &--lhs {
+      padding-top: 150px;
+      padding-right: 100px;
+      @media screen and (max-width: 768px) {
+        padding-top: 100px;
+        padding-right: 0;
+      }
+
+      & h1 {
+        font-size: $large-text;
+        font-weight: $primary-content-font-weight;
+        color: $grey;
+        text-transform: initial;
+        width: 100%;
+      }
+      & p {
+        color: $grey;
+        white-space: pre-wrap;
+      }
+    }
+
+    &--rhs {
+      padding-top: 100px;
+      text-align: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media screen and (max-width: 768px) {
+        padding-top: 0;
+      }
+      @media screen and (max-width: 667px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      & .project-info-mockup {
+        width: 600px;
+        height: 600px;
+        object-fit: contain;
+        @media screen and (max-width: 768px) {
+          width: 70vw;
+          height: auto;
+          padding: 50px 0;
+        }
+      }
+
+      & .project-info-mobile-mockup {
+        width: 45%;
+        // height: 400px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    margin-top: 30px;
+    justify-content: flex-end;
+    @media screen and (max-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    & .project-title-box {
+      margin-right: 30px;
+    }
+
+    & .info-title {
+      color: $grey;
+      font-size: $primary-content-text;
+      display: block;
+      margin: 7px 0 20px 0;
+    }
+
+    & .info-label {
+      color: $grey;
+      font-size: $primary-content-text;
+      display: block;
+      margin: 7px 0 20px 0;
+    }
+  }
+
+  &__ssfull {
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    .carousel {
+      background: transparent;
+    }
+
+    .carousel-cell {
+      width: 28%;
+      height: 550px;
+      margin-right: 10px;
+      counter-increment: carousel-cell;
+
+      @media screen and (max-width: 667px) {
+        width: 100%;
+        margin-right: 0;
+        // background-color: orange;
+      }
+    }
+  }
+
+  &__sstwocolumn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: auto;
+      justify-content: center;
+    }
+
+    & .ss-laptop {
+      width: 70%;
+      margin: 0 auto;
+    }
+    & .ss-laptop:nth-child(even) {
+      margin-top: 2px;
+    }
+  }
+
+  &__ss3column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: auto;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project-outer__ssfull .carousel div {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .project-outer__ssfull .carousel div {
+    padding: 0;
+  }
+}
+
+.fan-mockup {
+  left: 5vw;
+  position: relative;
+}
+
+// .ss-full {
+//   width: 960px;
+//   margin: 0 auto;
+// }
+
+.mobile-ss-0 {
+  height: 450px;
+  @media screen and (max-width: 667px) {
+    height: 300px;
+    padding-bottom: 90px;
+  }
+}
+
+.mobile-ss-1 {
+  height: 450px;
+  @media screen and (max-width: 667px) {
+    // width: 50%;
+    // height: auto;
+    top: 6vh;
+    position: absolute;
+  }
+}
+
+.mobile-ss-2 {
+  height: 550px;
+}
+
+.mobile-ss-3 {
+  height: 550px;
+  @media screen and (max-width: 667px) {
+    width: 80vw;
+    height: auto;
+  }
+}
+.project-navigation {
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 667px) {
+    min-height: 150px;
+  }
+
+  & a:link,
+  & a:visited {
+    font-size: 5vw;
+    font-weight: $tertiary-font-weight;
+    color: $tertiary-text-color;
+    @media screen and (max-width: 768px) {
+      font-size: 10vw;
+    }
+  }
+  & a:hover {
+    color: $tertiary-text-color;
+  }
+}
+
+.project-icons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 5rem 0;
+
+  @media screen and (max-width: 667px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & div {
+    padding: 2.5rem;
+  }
+  &__m {
+    filter: invert(30%);
+    width: 40px;
+    cursor: pointer;
+
+    &:hover {
+      filter: invert(100%);
+    }
+  }
+}
+
+.test {
+  overflow: hidden;
+  position: relative;
+}
+
+.test-one {
+  position: absolute;
+  transition: all 10s ease-in;
+}
+
+.test-two {
+  display: none;
+  position: absolute;
+  z-index: 3;
+}
+.test-one:hover + .test-two {
+  display: block;
+}
+
+// @media screen and (max-width: 667px) {
+//   #mockup-mobile div {
+//     border: 3px solid red;
+
+//     & .fan-mockup {
+//       border: 3px dotted yellow;
+//       width: 300px;
+//       height: auto;
+//     }
+//   }
+// }

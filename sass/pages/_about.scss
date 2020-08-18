@@ -1,13 +1,109 @@
+.about-outer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: 768px) {
+    grid-template-columns: auto;
+  }
+}
+.about-lhs {
+  background-color: $primary-bg-color;
+  border: 1px solid $secondary-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    padding: 3rem;
+    order: 2;
+  }
+  @media screen and (max-width: 667px) {
+    padding: 0;
+    border: 0;
+  }
+}
+
 .about-content {
   display: block;
   width: 450px;
-  padding-top: 50px;
+  // padding-top: 50px;
+  @media screen and (max-width: 768px) {
+    width: 70vw;
+  }
+  @media screen and (max-width: 667px) {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .video-container {
+  background: transparent url("/images/spinner.svg") center center no-repeat;
+  background-size: 90px;
   height: 550px;
+  border-left: 1px solid $primary-bg-color;
+  @media screen and (max-width: 768px) {
+    height: 40vh;
+  }
+  @media screen and (max-width: 667px) {
+    height: 70vh;
+  }
 }
 .video-container .about-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-container-grid {
+  height: 100%;
+  border-left: 1px solid $primary-bg-color;
+  position: relative;
+
+  .videobtns {
+    // background-color: rgba(18, 18, 18, 0.8);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    filter: invert(0%);
+
+    .btn-play {
+      border: 0;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      filter: invert(50%);
+      margin-bottom: 5px;
+      margin-left: 5px;
+    }
+    .btn-pause {
+      border: 0;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      filter: invert(50%);
+      display: none;
+      margin-bottom: 5px;
+      margin-left: 5px;
+    }
+  }
+
+  // .orange {
+  //   background-color: rgba(255, 123, 0, 0.4);
+  // }
+  // .blue {
+  //   background-color: rgba(0, 38, 255, 0.4);
+  // }
+  // .green {
+  //   background-color: rgba(72, 255, 0, 0.4);
+  // }
+  // .aqua {
+  //   background-color: rgba(0, 247, 255, 0.4);
+  // }
+}
+.video-container-grid .about-video-grid {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -16,13 +112,81 @@
 .about-rhs {
   position: relative;
 }
-.techskills {
-  background: yellowgreen;
+.techskills,
+.hobbies {
+  background: $secondary-bg-color;
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 1;
   display: none;
+  overflow: hidden;
+}
+
+.hobbies {
+  &__grid {
+    // border: 1px solid red;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+
+    & div:nth-child(1) {
+      // background-color: yellowgreen;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    & div:nth-child(2) {
+      // background-color: tomato;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    & div:nth-child(3) {
+      // background-color: aqua;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    & div:nth-child(4) {
+      // background-color: blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .photo {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    z-index: 1;
+  }
+  .stickbox {
+    .stick {
+      height: 300px;
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -95%);
+    }
+
+    .sticktop {
+      border: 2px solid #030303;
+      background-color: #030303;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      width: 245px;
+      height: 10px;
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+    }
+  }
 }
 .skill-links {
   background: transparent;
@@ -36,7 +200,332 @@
   justify-content: flex-end;
   z-index: 1;
 
-  & a {
+  & div {
+    display: inline-block;
+    width: 100px;
+    height: 15px;
+    text-align: center;
     margin-right: 20px;
+    // border: 1px solid aqua;
+    & a {
+      &.showHobbies {
+        display: block;
+      }
+      &.showTechnicalSkills {
+        display: block;
+      }
+    }
   }
+}
+#hideTechnicalSkills {
+  cursor: pointer;
+  display: none;
+  border: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: transparent;
+}
+#hideHobbies {
+  cursor: pointer;
+  display: none;
+  border: 0;
+  z-index: 3;
+  background-color: transparent;
+}
+.techskills__box {
+  // border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  &--top {
+    font-size: 13px;
+    color: $primary-text-color;
+    // border: 1px solid aqua;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 300px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+
+    & div {
+      position: absolute;
+    }
+  }
+
+  &--bottom {
+    // border: 1px solid blue;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+  }
+}
+
+.skills-heading {
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 16px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.skills-sub-heading {
+  font-size: 13px;
+  text-transform: initial;
+  letter-spacing: 1.2px;
+  font-weight: 300;
+  padding-top: 0px;
+  display: inline-block;
+}
+.skills-torch {
+  background-color: rgba(196, 196, 196, 0.2);
+  width: 43px;
+  height: 182px;
+  border: 1px solid rgba(196, 196, 196, 0.2);
+  border-radius: 50px;
+  position: absolute;
+  z-index: 3;
+  margin-top: -12px;
+  // animation: changeColor 1s reverse infinite;
+  // display: none;
+}
+.skills-rotate {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  animation: rotateSkills 30s linear infinite;
+  z-index: 2;
+
+  & img {
+    width: auto;
+    height: 24px;
+    // transform: rotate(109deg);
+  }
+
+  &__icons {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @media screen and (max-width: 320px) {
+      width: 90%;
+    }
+
+    &--1 {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--2 {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--3 {
+      position: absolute;
+      top: 100px;
+      right: 0px;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--4 {
+      position: absolute;
+      bottom: 90px;
+      right: 5px;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--5 {
+      position: absolute;
+      bottom: 30px;
+      right: 50px;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--6 {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--7 {
+      position: absolute;
+      bottom: 30px;
+      left: 50px;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--8 {
+      position: absolute;
+      bottom: 110px;
+      left: 0px;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--9 {
+      position: absolute;
+      top: 105px;
+      left: 0px;
+      height: 11px !important;
+      animation: rotateReverse 30s linear infinite;
+    }
+    &--10 {
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      animation: rotateReverse 30s linear infinite;
+    }
+  }
+}
+
+.skills-fixed {
+  // border: 1px solid aqua;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  // left: 0;
+  // top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__dottedborder {
+    width: 183px;
+    height: 183px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px dotted rgba(18, 18, 18, 0.8);
+    z-index: 2;
+  }
+
+  &__circlelg {
+    width: 143px;
+    height: 143px;
+    background-color: #292929;
+    border-radius: 50%;
+    position: absolute;
+    border: 10px solid rgba(18, 18, 18, 0.8);
+    box-shadow: 0px 1px 1px #4d4d4d;
+    // -webkit-box-shadow: inset 0px 0px 13px 0px rgba(26, 26, 26, 1);
+    // -moz-box-shadow: inset 0px 0px 13px 0px rgba(26, 26, 26, 1);
+    // box-shadow: inset 0px 0px 13px 0px rgba(26, 26, 26, 1);
+    z-index: 2;
+  }
+
+  &__circlesm {
+    width: 43px;
+    height: 43px;
+    background-color: #191919;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+.patch {
+  width: 190px;
+  background: transparent;
+  border: 0;
+  border-bottom: 0;
+  height: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  position: absolute;
+  // box-shadow: 1px 1px 3px red;
+}
+.patchTwo {
+  background-color: $secondary-bg-color;
+  opacity: 1;
+  width: 100%;
+  height: 350px;
+  top: 200px;
+  position: absolute;
+  z-index: 1;
+}
+.skills-title {
+  position: absolute;
+  bottom: 0;
+  animation: hello 30s linear infinite;
+  // border: 1px solid aqua;
+
+  & .skills-heading {
+    margin: 40px 0 0 0;
+  }
+}
+.skills-title-1 {
+  position: absolute;
+  bottom: 0;
+  animation: hello 20s linear infinite;
+}
+.skills-title-2 {
+  position: absolute;
+  bottom: 20px;
+}
+.skills-title-3 {
+  position: absolute;
+  bottom: 40px;
+}
+.skills-title-4,
+.skills-title-5,
+.skills-title-6,
+.skills-title-7,
+.skills-title-8,
+.skills-title-9,
+.skills-title-10 {
+  display: none;
+}
+
+// .skills-title-1 {
+//   animation: st1 1s forwards;
+// }
+// .skills-title-2 {
+//   animation: st2 1s 1s forwards;
+//   opacity: 0;
+// }
+// .skills-title-3 {
+//   animation: st2 1s 3s forwards;
+//   opacity: 0;
+// }
+// .skills-title-4 {
+//   animation: st2 1s 5s forwards;
+//   opacity: 0;
+// }
+// .skills-title-5 {
+//   animation: st2 1s 7s forwards;
+//   opacity: 0;
+// }
+// .skills-title-6 {
+//   animation: st2 1s 9s forwards;
+//   opacity: 0;
+// }
+// .skills-title-7 {
+//   animation: st2 1s 11s forwards;
+//   opacity: 0;
+// }
+// .skills-title-8 {
+//   animation: st2 1s 13s forwards;
+//   opacity: 0;
+// }
+// .skills-title-9 {
+//   animation: st2 1s 15s forwards;
+//   opacity: 0;
+// }
+// .skills-title-10 {
+//   animation: st2 1s 17s forwards;
+//   opacity: 0; #373737
+// }
+#myVideo {
+  background: red;
 }
